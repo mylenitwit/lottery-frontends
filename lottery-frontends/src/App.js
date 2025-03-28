@@ -16,7 +16,8 @@ const App = () => {
   const [networkName, setNetworkName] = useState('');
   const [transactionSuccess, setTransactionSuccess] = useState(false);
   const [switchingNetwork, setSwitchingNetwork] = useState(false);
-
+  const [isOwner, setIsOwner] = useState(false);
+  
   const handleConnectWallet = async () => {
     try {
       setLoading(true);
@@ -26,6 +27,9 @@ const App = () => {
       setConnected(true);
       setErrorMessage('');
       setNetworkName('Somnia Testnet');
+      
+      // Check if this is the owner wallet
+      checkOwner(address);
     } catch (error) {
       console.error('Error connecting wallet:', error);
       
@@ -51,12 +55,26 @@ const App = () => {
     }
   };
 
+  const checkOwner = async (userAddress) => {
+    try {
+      const contract = getContract();
+      const contractOwner = await contract.owner();
+      
+      // Check if the connected wallet is the owner
+      const isAdmin = userAddress.toLowerCase() === contractOwner.toLowerCase();
+      setIsOwner(isAdmin);
+    } catch (error) {
+      console.error('Owner check error:', error);
+    }
+  };
+
   const handleDisconnectWallet = async () => {
     try {
       await disconnectWallet();
       setConnected(false);
       setWalletAddress('');
       setNetworkName('');
+      setIsOwner(false);
     } catch (error) {
       console.error('Error disconnecting wallet:', error);
       setErrorMessage('Error disconnecting wallet');
@@ -166,6 +184,13 @@ const App = () => {
             <i className="bi bi-ticket-perforated-fill me-2"></i>
             Lottery DApp
           </div>
+          <div className="navbar-nav me-auto">
+            {connected && isOwner && (
+              <a className="btn btn-warning" href="/admin">
+                <i className="bi bi-shield-lock-fill me-1"></i> Admin Panel
+              </a>
+            )}
+          </div>
           <div className="d-flex align-items-center">
             {!connected ? (
               <button
@@ -190,13 +215,14 @@ const App = () => {
                 <div className="wallet-address">
                   <i className="bi bi-wallet-fill me-2"></i>
                   {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
+                  {isOwner && <span className="badge bg-warning ms-2">Admin</span>}
                 </div>
-          <button
+                <button
                   className="btn btn-outline-light btn-sm disconnect-btn"
                   onClick={handleDisconnectWallet}
-          >
+                >
                   <i className="bi bi-power me-1"></i>Disconnect
-          </button>
+                </button>
               </div>
             )}
           </div>
