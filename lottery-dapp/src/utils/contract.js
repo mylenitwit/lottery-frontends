@@ -2,7 +2,10 @@ import { ethers } from 'ethers';
 import contractABI from './contractABI'; 
 import Web3Modal from 'web3modal';
 
-const CONTRACT_ADDRESS = '0x747B5CdE93c8a6e0Ec1BE73574d7CC16DAb49Cb3';
+// IMPORTANT: After deploying the new contract, update this address
+// Old contract: const CONTRACT_ADDRESS = '0x149A59fd7A299086ede45D31318b0500bdf126fb';
+const CONTRACT_ADDRESS = '0x2739E47f8F8e9cd148fC11251F4aFF1D24C46bEa'; // Replace with new LotteryContract address
+
 const SOMNIA_TESTNET_ID = 50312;
 const SOMNIA_RPC_URL = "https://dream-rpc.somnia.network";
 

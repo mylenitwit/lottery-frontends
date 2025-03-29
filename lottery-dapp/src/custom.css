@@ -1,0 +1,1128 @@
+/* src/custom.css */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-1: #0057FF;   /* İlk ana renk - mavi */
+  --primary-2: #A533FF;   /* İkinci ana renk - mor */
+  --secondary-1: #FF008C; /* İlk ikincil renk - pembe */
+  --secondary-2: #00FFF0; /* İkinci ikincil renk - turkuaz */
+  --accent-1: #000AFF;    /* Vurgu rengi - koyu mavi */
+  --accent-2: #AD00FF;    /* Vurgu rengi - mor */
+  --accent-3: #FF00D6;    /* Vurgu rengi - magenta */
+  --accent-4: #00D4FF;    /* Vurgu rengi - açık mavi */
+  --accent-5: #BDFF00;    /* Vurgu rengi - lime */
+  --accent-6: #FAFF00;    /* Vurgu rengi - sarı */
+  --accent-7: #FF006B;    /* Vurgu rengi - koyu pembe */
+  
+  /* Koyu tema renkleri */
+  --bg-color: #121212;     /* Arka plan rengi - koyu gri */
+  --card-bg: #1E1E1E;      /* Kart arka plan - koyu gri */
+  --darker-bg: #0A0A0A;    /* Daha koyu arka plan */
+  --text-color: #FFFFFF;   /* Metin rengi - beyaz */
+  --text-muted: #AAAAAA;   /* Soluk metin rengi - gri */
+  --border-color: #333333; /* Kenarlık rengi - gri */
+  --hover-bg: #252525;     /* Hover durumu arka plan rengi */
+  --primary-color: #5C6BC0;  /* Indigo for main elements */
+  --primary-dark: #3949AB;   /* Darker shade for hover states */
+  --secondary-color: #7E57C2; /* Purple for secondary elements */
+  --accent-color: #EC407A;   /* Pink for accents and highlights */
+  --background-color: #F5F7FA; /* Light gray for backgrounds */
+  --text-primary: #2A3342;   /* Dark gray for text */
+  --text-secondary: #566577; /* Medium gray for secondary text */
+  --success-color: #4CAF50;  /* Green for success states */
+  --warning-color: #FFC107;  /* Yellow for warnings */
+  --danger-color: #F44336;   /* Red for errors */
+  --primary: #0057FF;
+  --secondary: #A533FF;
+  --accent-1: #AD00FF;
+  --accent-2: #FF00D6;
+  --accent-3: #00D4FF;
+  --accent-4: #BDFF00;
+  --accent-5: #FAFF00;
+  --accent-6: #FF006B;
+  --dark: #1a1a2e;
+  --light: #ffffff;
+  --gray-light: #f8f9fa;
+  --gray: #e9ecef;
+  --text-dark: #212529;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.lottery-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lottery-app > .container {
+  flex: 1;
+}
+
+/* Wallet connection styles */
+.wallet-info-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.network-badge {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 0 10px rgba(173, 0, 255, 0.3);
+}
+
+.wallet-address {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-4);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.disconnect-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: white;
+  transition: all 0.3s;
+}
+
+.disconnect-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--card-bg);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(173, 0, 255, 0.3);
+}
+
+.card-header {
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+  color: white;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  padding: 0.75rem 1rem;
+  border-bottom: none;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.card-body {
+  color: var(--text-color);
+}
+
+.welcome-card {
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--card-bg), var(--darker-bg));
+}
+
+.welcome-card .card-body {
+  padding: 2.5rem;
+}
+
+.welcome-card:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 6s infinite;
+  z-index: 1;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    top: -100%;
+  }
+  20% {
+    left: 100%;
+    top: 100%;
+  }
+  100% {
+    left: 100%;
+    top: 100%;
+  }
+}
+
+.bg-light {
+  background-color: var(--primary-dark) !important;
+}
+
+.table {
+  color: var(--text-color);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--primary-dark);
+}
+
+.custom-btn {
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+}
+
+.navbar {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.navbar .btn-primary {
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+  border: none;
+  box-shadow: 0 0 10px rgba(165, 51, 255, 0.5);
+}
+
+.navbar .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(165, 51, 255, 0.7);
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background-color: var(--bg-color);
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.input-group-text, .form-control {
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.btn-outline-secondary {
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  background: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-color);
+  border-color: var(--primary-2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.alert {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .wallet-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .step-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Reduce size of display headings */
+.display-5 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary-1), var(--primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.display-6 {
+  font-size: 1.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-dark .navbar-brand {
+  color: var(--light);
+  font-weight: 700;
+}
+
+.navbar .btn-primary {
+  background-color: var(--accent-3);
+  border-color: var(--accent-3);
+}
+
+.navbar .btn-primary:hover {
+  background-color: var(--accent-3);
+  opacity: 0.9;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  border-bottom: none;
+  padding: 0.75rem 1.25rem;
+  border-top-left-radius: 0.75rem !important;
+  border-top-right-radius: 0.75rem !important;
+  font-weight: 600;
+}
+
+.card-header.bg-primary {
+  background: linear-gradient(45deg, var(--primary), var(--accent-3)) !important;
+}
+
+.card-header.bg-dark {
+  background: linear-gradient(45deg, var(--dark), var(--accent-1)) !important;
+}
+
+.card-header.bg-info {
+  background: linear-gradient(45deg, var(--accent-3), var(--accent-4)) !important;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* Button styles */
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #004ae0;
+  border-color: #004ae0;
+}
+
+.btn-success {
+  background-color: var(--accent-4);
+  border-color: var(--accent-4);
+  color: var(--dark);
+}
+
+.btn-success:hover, .btn-success:focus {
+  background-color: #a7e600;
+  border-color: #a7e600;
+  color: var(--dark);
+}
+
+.btn-warning {
+  background-color: var(--accent-5);
+  border-color: var(--accent-5);
+  color: var(--dark);
+}
+
+.btn-danger {
+  background-color: var(--accent-6);
+  border-color: var(--accent-6);
+}
+
+/* Badge styles */
+.badge {
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+  border-radius: 0.5rem;
+}
+
+.badge.bg-success {
+  background-color: var(--success-color) !important;
+}
+
+.badge.bg-danger {
+  background-color: var(--danger-color) !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--warning-color) !important;
+  color: #212529;
+}
+
+.badge.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.form-control:focus {
+  border-color: var(--primary-2);
+  box-shadow: 0 0 0 0.25rem rgba(165, 51, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-group-text {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+/* Alert styles */
+.alert {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.75rem 1rem;
+}
+
+.alert-danger {
+  background-color: rgba(255, 0, 107, 0.1);
+  color: var(--accent-6);
+}
+
+.alert-success {
+  background-color: rgba(189, 255, 0, 0.1);
+  color: #6a8800;
+}
+
+.alert-warning {
+  background-color: rgba(250, 255, 0, 0.1);
+  color: #7a7900;
+}
+
+.alert-info {
+  background-color: rgba(0, 212, 255, 0.1);
+  color: #006e8a;
+}
+
+/* Table styles */
+.table {
+  font-size: 0.85rem;
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 87, 255, 0.05);
+}
+
+/* Tab styles */
+.nav-tabs {
+  border-bottom: 1px solid var(--gray);
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  color: var(--text-primary);
+  border-bottom: 2px solid #e1e6ef;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  background-color: transparent;
+}
+
+/* Wallet info container */
+.wallet-info-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.network-badge {
+  font-size: 0.8rem;
+  color: var(--light);
+  margin-right: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+.wallet-address {
+  font-size: 0.85rem;
+  color: var(--light);
+  margin-right: 0.75rem;
+}
+
+.disconnect-btn {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+}
+
+/* Prize cards */
+.prize-card {
+  position: relative;
+  padding: 2rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ribbon styles */
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 8px 0;
+  background-color: var(--primary);
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font-size: 0.8rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+
+.ribbon-top-right span {
+  left: -10px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+
+/* Step circles */
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome card animation */
+.welcome-card {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Compact layouts */
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.py-5 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.p-3 {
+  padding: 0.75rem !important;
+}
+
+.p-5 {
+  padding: 1.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-3 {
+  margin-top: 0.75rem !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.mt-5 {
+  margin-top: 1.5rem !important;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-color);
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Specific size adjustments for lottery status */
+.display-5.fw-bold.text-primary {
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-2, .col-md-3, .col-md-4, .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .display-5 {
+    font-size: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Last winners section for App.js */
+.winners-section {
+  margin-top: 1rem;
+}
+
+.winners-header {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.winner-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.winner-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(3px) scale(1.02);
+  box-shadow: 0 0 10px rgba(165, 51, 255, 0.3);
+}
+
+.winner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.winner-position {
+  width: 24px;
+  text-align: center;
+}
+
+.winner-position i {
+  font-size: 1.1rem;
+}
+
+.winner-address {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.winner-prize {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Compact lottery management tools */
+.management-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.tool-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.tool-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+/* Spinner */
+.spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Trophy Icons with Glow Effects */
+.display-1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary-1), var(--primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(165, 51, 255, 0.3);
+}
+
+/* Parlayan Kupalar */
+.winner-position i.bi-trophy-fill.text-warning {
+  color: #FFD700 !important; /* Altın rengi */
+  filter: drop-shadow(0 0 5px #FFD700);
+  animation: pulse-gold 2s infinite;
+}
+
+.winner-position i.bi-trophy-fill.text-secondary {
+  color: #C0C0C0 !important; /* Gümüş rengi */
+  filter: drop-shadow(0 0 5px #C0C0C0);
+  animation: pulse-silver 2s infinite;
+}
+
+.winner-position i.bi-trophy-fill.text-danger {
+  color: #CD7F32 !important; /* Bronz rengi */
+  filter: drop-shadow(0 0 5px #CD7F32);
+  animation: pulse-bronze 2s infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px #FFD700);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #FFD700);
+  }
+}
+
+@keyframes pulse-silver {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px #C0C0C0);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #C0C0C0);
+  }
+}
+
+@keyframes pulse-bronze {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px #CD7F32);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #CD7F32);
+  }
+}
+
+/* Prize Distribution Cards */
+.card-body i.bi-trophy-fill.text-warning {
+  color: #FFD700 !important; /* Altın rengi */
+  filter: drop-shadow(0 0 5px #FFD700);
+  animation: pulse-gold 2s infinite;
+}
+
+.card-body i.bi-trophy-fill.text-secondary {
+  color: #C0C0C0 !important; /* Gümüş rengi */
+  filter: drop-shadow(0 0 5px #C0C0C0);
+  animation: pulse-silver 2s infinite;
+}
+
+.card-body i.bi-trophy-fill.text-danger {
+  color: #CD7F32 !important; /* Bronz rengi */
+  filter: drop-shadow(0 0 5px #CD7F32);
+  animation: pulse-bronze 2s infinite;
+}
+
+/* Button Effects */
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+  border: none;
+  box-shadow: 0 0 10px rgba(165, 51, 255, 0.3);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(90deg, var(--primary-2), var(--primary-1));
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(165, 51, 255, 0.5);
+}
+
+.btn-warning {
+  background: linear-gradient(90deg, var(--accent-6), var(--accent-5));
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Card Elements Inside Cards */
+.card .p-2.border.rounded.text-center {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-color) !important;
+}
+
+/* Generic White Backgrounds Override */
+.bg-white {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+/* Overriding border styles */
+.border {
+  border-color: var(--border-color) !important;
+}
+
+/* Bootstrap Backgrounds Override */
+.bg-light {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-color) !important;
+}
+
+/* Table Backgrounds */
+.table {
+  color: var(--text-color);
+}
+
+.table-dark {
+  background-color: var(--darker-bg);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Cost Display */
+.cost-display {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* Admin Panel Table Styles */
+.tab-content .table {
+  color: var(--text-color);
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color);
+}
+
+.tab-content .table thead th {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.tab-content .table tbody tr {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color);
+  color: var(--text-color) !important;
+}
+
+.tab-content .table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.tab-content .table td,
+.tab-content .table th {
+  border-color: var(--border-color);
+  padding: 6px 8px;
+  vertical-align: middle;
+  color: var(--text-color) !important;
+}
+
+/* Cüzdan adresleri için genişlik ayarları */
+.tab-content .table .text-truncate {
+  max-width: 100% !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* Admin Panel'deki card-body arkaplanını düzelt */
+.lottery-admin .card-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Tablo için scrollbar stilleri - daha şık görünüm */
+.tab-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) var(--card-bg);
+}
+
+.tab-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 20px;
+  border: 2px solid var(--card-bg);
+}
+
+/* Footer renklerini düzeltme - admin panel için */
+.lottery-admin footer {
+  background-color: var(--bg-color) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tablo başlık rengini düzenle */
+.lottery-admin .card-header {
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+}
+
+/* Fix light backgrounds throughout the application */
+.table {
+  color: var(--text-color) !important;
+  background-color: var(--card-bg) !important;
+}
+
+.table tr {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.table th, .table td {
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+  background-color: transparent !important;
+}
+
+/* Override bootstrap table styles */
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-color) !important;
+}
+
+/* Admin panel footer fix */
+.lottery-admin footer {
+  background-color: var(--bg-color) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Fix background of footer in admin panel */
+footer.bg-light {
+  background-color: var(--bg-color) !important;
+}
+
+/* Fund Management Input Fields */
+.lottery-admin .card .input-group .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+.lottery-admin .card .input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lottery-admin .card .input-group-text {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+/* Input Info Text */
+.lottery-admin .card .text-muted.small {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6) !important;
+  letter-spacing: 0.2px;
+}
+
+/* Buy Tickets Input Field */
+.lottery-app .card .input-group .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+.lottery-app .card .input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Refresh Button Styles */
+.btn-outline-primary:hover i.bi-arrow-clockwise {
+  animation: spin 0.8s ease-in-out;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Round separator için stil */
+.round-separator {
+  position: relative;
+  height: 1px;
+  margin: 10px 0;
+}
+
+.separator-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.round-header {
+  text-align: center;
+}
